@@ -63,6 +63,11 @@
 		var $toggle = $('<div class="toggle btn" data-toggle="toggle">')
 			.addClass( this.$element.prop('checked') ? this._onstyle : this._offstyle+' off' )
 			.addClass(size).addClass(this.options.style)
+	        if (this.$element.attr('title')) {
+	            $toggleOn.attr('title', this.$element.attr('title'));
+	            $toggleOff.attr('title', this.$element.attr('title'));
+	            $toggleHandle.attr('title', this.$element.attr('title'));
+	        }
 
 		this.$element.wrap($toggle)
 		$.extend(this, {
